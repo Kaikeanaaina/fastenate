@@ -1,5 +1,231 @@
-body {
-  h1 {
-    background-color: #fff;
-  }
+//frameworks
+*{
+  box-sizing: border-box;
 }
+
+// variables
+$tertiary: #E6AC27;
+
+$small-unit:25px;
+$medium-unit:50px;
+$large-unit:100px;
+
+//Mixin
+@mixin header-font($header-font-color:$tertiary,$header-font-size:38px){
+  font-family: 'Oswald', sans-serif;
+  font-weight: normal;
+  color: $header-font-color;
+  font-size: $header-font-size;
+  padding-bottom:$header-font-size/2;
+  line-height: $header-font-size*1.5;
+
+  @media#{$medium}{
+    font-size:$header-font-size*2;
+    line-height:$header-font-size*3;
+  }
+
+  @media#{$large}{
+    font-size: $header-font-size*3
+    line-height:$header-font-size*4;
+
+  }
+
+}
+
+//Media Query Ranges
+$medium: "only screen and (min-width:600px)";
+$large: "only screen and (min-width:900px)";
+
+
+body {
+    background-color: $tertiary;
+
+  .block-title{
+    background-color:white;
+    margin: 0px;
+    padding:0px;
+    border:0px;
+
+  }
+
+  .block-directory{
+      display: flex;
+      flex-flow: row nowrap;
+
+    .directory{
+      background-color:white;
+      flex:0 0 33.3333%;
+
+    }
+  }
+
+    .pugs{
+      background-color:white;
+    }
+
+}
+
+.title{
+  background-color:#7fffd3;
+}
+
+.subTitle{
+  background-color:#ffd4e5;
+}
+
+.paragraph{
+  background-color:#00ffab;
+}
+
+
+
+// // PROCESS
+// // 1. Set basic variables & media query ranges
+// // 2. Style large blocks with bg colors for layout
+// // 3. Get general layout elements (block) sized for all media queries
+// // 4. Modify general layout elements with &
+// // 5. Secondary features grid (S --> L)
+// // 6. Typography & Image Sizes
+// // 7. Refactor the SCSS to make it dryer & simpler.
+// // 8. Set variables for common values.
+
+
+// // RESETS & FRAMEWORKS
+// * {
+//   box-sizing: border-box;
+// }
+
+// @import 'partials/reset';
+
+// // VARIABLES &
+// $primary: #655643;
+// $secondary: #80BCA3;
+// $tertiary: #E6AC27;
+// $background: #F6F7BD;
+
+// $small-unit:25px;
+// $medium-unit:50px;
+// $large-unit:100px;
+
+// //MIXINS
+// @mixin header-font($header-font-color:$tertiary,$header-font-size:38px){
+//   font-family: 'Oswald', sans-serif;
+//   font-weight: normal;
+//   color: $header-font-color;
+//   font-size: $header-font-size;
+//   padding-bottom:$header-font-size/2;
+//   line-height: $header-font-size*1.5;
+
+//   @media#{$medium}{
+//     font-size:$header-font-size*2;
+//     line-height:$header-font-size*3;
+//   }
+
+//   @media#{$large}{
+//     font-size: $header-font-size*3
+//     line-height:$header-font-size*4;
+
+//   }
+
+// }
+
+// // MEDIA QUERY RANGES
+// $medium: "only screen and (min-width:600px)";
+// $large: "only screen and (min-width:900px)";
+
+// // GENERAL STYLES
+
+// body{
+//   background-color: $tertiary;
+// }
+
+// h1{
+//   @include header-font;
+//   text-align: center;
+// }
+
+// h2{
+//   @include header-font($secondary, 16px);
+// }
+
+// p{
+//   color: $primary;
+//   font-family: 'Roboto Condensed', sans-serif;
+//   font-weight: 300;
+//   font-size: 14px;
+//   line-height: 18px;
+
+
+//   + p{
+//     margin-top: 18px;
+//   }
+
+//   @media#{$medium}{
+//     font-size:17px;
+//     line-height: 21px;
+
+//   }
+
+//   @media#{$large}{
+//     font-size: 30px;
+//     line-height: 24px;
+
+//   }
+// }
+
+// .block{
+//   margin: auto;
+//   background-color: lighten($background, 10%);
+//   padding: 25px;
+
+
+//   @media #{$medium}{
+//     padding: 50px;
+//   }
+
+//   @media #{$large}{
+//     padding:100px;
+//   }
+
+
+//   }
+
+// .block-title{
+//     border-bottom:4px solid $tertiary;
+//     transition: all 1s ease;
+
+//     @media #{$medium}{
+//       border-bottom: 8px solid $tertiary;
+//     }
+
+//     @media #{$large}{
+//       border-bottom: 10px solid $tertiary;
+//     }
+// }
+
+
+// .block-pugs{
+//   display: flex;
+//   flex-flow: row wrap;
+//   border: 5px solid red;
+//   justify-content: space-betwen;
+
+// }
+
+// .pugs{
+//       background-color: yellow ;
+//       border: 10px solid orange;
+//       flex: 0 0 100%;
+
+//       @media #{$medium}{
+//         flex: 0 0 50%;
+//       }
+
+//       @media #{$large}{
+//         flex: 0 0 33.3333%;
+//       }
+
+//       img{
+//         max-width:100px;
+//       }
+//     }
