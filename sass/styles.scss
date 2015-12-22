@@ -24,11 +24,11 @@ $large-unit:100px;
     line-height:$header-font-size*3;
   }
 
-  @media#{$large}{
-    font-size: $header-font-size*3
-    line-height:$header-font-size*4;
+  // @media#{$large}{
+  //   font-size: $header-font-size*3
+  //   line-height:$header-font-size*4;
 
-  }
+  // }
 
 }
 
