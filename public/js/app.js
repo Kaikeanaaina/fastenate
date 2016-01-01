@@ -51,49 +51,55 @@ var alohaloha = 50;
 
 
 
-  var randomButton = document.getElementById('randomButton');
-  randomButton.addEventListener('click',function(){
+//   var randomButton = document.getElementById('randomButton');
+//   randomButton.addEventListener('click',function(){
 
-    //this resets the array where the random numbers are saved
-    arrayOfRandoms=[];
+//     //this resets the array where the random numbers are saved
+//     arrayOfRandoms=[];
 
-    //this erase all divs in the divContent
-    for(var i = 0 ; i < alohaloha ; i++){
-      document.getElementsByClassName('block-content')[0].removeChild(document.getElementById('id'+i));
-    }
+//     //this erase all divs in the divContent
+//     for(var i = 0 ; i < alohaloha ; i++){
+//       document.getElementsByClassName('block-content')[0].removeChild(document.getElementById('id'+i));
+//     }
 
-    $.getJSON('./api/get_the_app.json',function(data){     //first argument -path to our data. //second argument - call back function()
+//     $.getJSON('./api/get_the_app.json',function(data){     //first argument -path to our data. //second argument - call back function()
 
-      //this pushes the random numbers in the array
-      makingArrayofRandoms();
+//       //this pushes the random numbers in the array
+//       makingArrayofRandoms();
 
-      console.log(data.data.children.length);
-
-
-      for(var i=0; i<data.data.children.length; i++){
-      var div = document.createElement('div');
-      div.className = 'divContent';
-      div.id = 'id'+i;
-
-      document.getElementsByClassName('block-content')[0].appendChild(div);
-      var image = data.data.children[arrayOfRandoms[i]].data.url;
-      var title = data.data.children[arrayOfRandoms[i]].data.title;
-      var author = data.data.children[arrayOfRandoms[i]].data.author;
+//       console.log(data.data.children.length);
 
 
+//       for(var i=0; i<data.data.children.length; i++){
+//       var div = document.createElement('div');
+//       div.className = 'divContent';
+//       div.id = 'id'+i;
 
-      $(div).append('<img src = " '+image+'"></img>');
-      $(div).append('<h3>'+title+'</div>');
-      $(div).append('<h5> by '+author+'</h5>');
-
-      }
-
-  });
-
-
-});
+//       document.getElementsByClassName('block-content')[0].appendChild(div);
+//       var image = data.data.children[arrayOfRandoms[i]].data.url;
+//       var title = data.data.children[arrayOfRandoms[i]].data.title;
+//       var author = data.data.children[arrayOfRandoms[i]].data.author;
 
 
+
+//       $(div).append('<img src = " '+image+'"></img>');
+//       $(div).append('<h3>'+title+'</div>');
+//       $(div).append('<h5> by '+author+'</h5>');
+
+//       }
+
+//   });
+
+
+// });
+
+  // var hoverContent = document.getElementsById('block-content');
+  // hoverContent.addEventListener('hover',(function() {
+  //    Stuff to do when the mouse enters the element
+  //   this.querySelectorAll.style.
+  // }, function() {
+  //   /* Stuff to do when the mouse leaves the element */
+  // });)
 
 
 
